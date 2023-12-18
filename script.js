@@ -40,9 +40,13 @@ class Calculator {
         this.currentValueText.append(this.currentOperand);
     }
 
+    convertNegative() {
+       this.currentValueText.append('-');
+    }
+
     equals() {
-        let num1 = parseInt(this.currentValueText.innerText);
-        let num2 = parseInt(this.nextValueText.innerText);
+        let num1 = parseFloat(this.currentValueText.innerText);
+        let num2 = parseFloat(this.nextValueText.innerText);
         
         if (this.currentOperand == '+') {
             this.results = num1 + num2;
@@ -59,6 +63,10 @@ class Calculator {
             this.results = num1 / num2;
         }
 
+        else if(this.currentOperand == '%') {
+            this.results = num1 % num2;
+        }
+
         this.currentValueText.innerText = this.results;
         this.nextValueText.innerText = "";
         this.currentOperand = "";
@@ -71,6 +79,7 @@ let nextValueText = document.getElementById('next');
 let clearButton = document.getElementById('clear');
 let operandButtons = document.querySelectorAll('[data-operand]');
 let equalButton = document.getElementById('equals');
+let negativeButton = document.getElementById('negative');
 
 const calculator = new Calculator(currentValueText, nextValueText);
 
@@ -93,4 +102,8 @@ operandButtons.forEach(button => {
 
 equalButton.addEventListener('click', () => {
     calculator.equals();
+})
+
+negativeButton.addEventListener('click', () => {
+    calculator.convertNegative();
 })

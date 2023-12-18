@@ -2,7 +2,15 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: aquamarine;
+    background-image: linear-gradient(90deg, lightgreen, lightblue);
+}
 
+h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 .container {
     width: 100%;
@@ -16,15 +24,17 @@
     background-color: black;
     padding: 20px;
     border-radius: 10px;
+    width: 20%;
+    height: 45vh;
 }
 
-.calculator form input {
+/*.calculator form input {
     border: 0;
     outline: 0;
     width: 60px;
     height: 60px;
     border-radius: 10px;
-}
+}*/
 
 button {
     cursor: pointer;
