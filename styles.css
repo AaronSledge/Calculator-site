@@ -13,19 +13,29 @@ h1 {
 }
 
 .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
 }
 
-.calculator {
-    background-color: black;
-    padding: 20px;
-    border-radius: 10px;
-    width: 20%;
-    height: 45vh;
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    /*width:960px;*/
+}
+
+@media (min-width: 600px) {
+
+
+    .calculator {
+        background-color: black;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        height: 400px;
+    }
 }
 
 /*.calculator form input {
@@ -36,10 +46,12 @@ h1 {
     border-radius: 10px;
 }*/
 
-button {
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
+@media (min-width: 600px) {
+    button {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
 }
 
 p {
